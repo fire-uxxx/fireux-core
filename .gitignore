@@ -60,10 +60,6 @@ content/db.json
 # Copilot
 copilot/
 
-# don’t track the split-out apps in the root repo
-projects/**
-packages/
-
 # Allow submodules in projects and packages
 !projects/
 !packages/

@@ -3,15 +3,11 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "projects/fireux/*",
-    "projects/misebox/*",
-    "projects/cleanbox/*"
+    "projects/**"
   ],
   "scripts": {
-    "clean": "rm -rf node_modules packages/*/node_modules projects/fireux/*/node_modules",
-    "install:all": "yarn install && yarn run install:core && yarn run install:apps",
-    "install:core": "cd packages/fireux-core && yarn install",
-    "install:apps": "cd projects/fireux/fireux-app && yarn install && cd ../fire-mvp && yarn install && cd ../../cleanbox/cleanbox-app && yarn install && cd ../richies-clean && yarn install && cd ../../misebox/misebox-app && yarn install"
+    "clean": "rm -rf node_modules packages/*/node_modules projects/**/node_modules",
+    "install:all": "yarn install"
   },
   "packageManager": "yarn@4.9.1"
 }
