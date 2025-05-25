@@ -1,0 +1,18 @@
+{
+  "name": "cleanbox-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@fireux/core": "workspace:*",
+    "nuxt": "^3.17.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,0 +1,21 @@
+import {
+  VueFire,
+  useSSRInitialState,
+} from 'vuefire'
+import { defineNuxtPlugin } from '#imports'
+
+export default defineNuxtPlugin((nuxtApp) => {
+  const firebaseApp = nuxtApp.$firebaseApp
+
+  nuxtApp.vueApp.use(VueFire, { firebaseApp })
+
+  <% if(options.ssr) { %>
+  if (import.meta.server) {
+    // collect the initial state
+    nuxtApp.payload.vuefire = useSSRInitialState(undefined, firebaseApp)
+  } else if (nuxtApp.payload?.vuefire) {
+    // hydrate the plugin state from nuxtApp.payload.vuefire
+    useSSRInitialState(nuxtApp.payload.vuefire, firebaseApp)
+  }
+  <% } %>
+})

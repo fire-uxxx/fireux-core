@@ -1,0 +1,92 @@
+**FIReUX - Installation Guide**
+
+## Step 1: Clone the FIReUX Template
+Download the latest version of FIReUX from the official repository:
+
+```bash
+# Clone the repository
+git clone https://your-fireux-repo.com fireux-project
+cd fireux-project
+```
+
+## Step 2: Install Dependencies
+FIReUX uses PNPM by default but supports NPM and Yarn.
+
+```bash
+# Install dependencies (choose one)
+pnpm install  # Recommended
+# or
+yarn install
+# or
+npm install
+```
+
+## Step 3: Set Up Environment Variables
+Create a `.env` file in the root of the project and add the following:
+
+```env
+# Firebase Configuration
+FIREBASE_API_KEY=your-api-key
+FIREBASE_AUTH_DOMAIN=your-auth-domain
+FIREBASE_PROJECT_ID=your-project-id
+FIREBASE_STORAGE_BUCKET=your-storage-bucket
+FIREBASE_MESSAGING_SENDER_ID=your-sender-id
+FIREBASE_APP_ID=your-app-id
+
+# Firebase Admin SDK (for server-side operations)
+GOOGLE_APPLICATION_CREDENTIALS=./config/service-account.json
+
+# Stripe Configuration
+STRIPE_SECRET_KEY=your-stripe-secret-key
+STRIPE_PUBLISHABLE_KEY=your-stripe-publishable-key
+```
+
+## Step 4: Initialize Firebase
+Ensure Firebase is properly set up by running:
+
+```bash
+pnpm run firebase:init
+```
+
+Or manually deploy Firestore rules:
+
+```bash
+firebase deploy --only firestore
+```
+
+## Step 5: Enable PWA Support
+Make sure your PWA assets (icons) are correctly placed:
+- `public/icons/icon-192x192.png`
+- `public/icons/icon-512x512.png`
+
+Modify `nuxt.config.ts` if needed.
+
+## Step 6: Run the Development Server
+Start the local development server:
+
+```bash
+pnpm run dev
+```
+
+Your app should now be running at `http://localhost:3000`.
+
+## Step 7: Build for Production
+To generate a production-ready build:
+
+```bash
+pnpm run build
+pnpm run preview
+```
+
+## Step 8: Deploy FIReUX
+For Firebase Hosting:
+```bash
+firebase deploy
+```
+For Vercel:
+```bash
+vercel
+```
+
+Your application is now live! 🚀
+

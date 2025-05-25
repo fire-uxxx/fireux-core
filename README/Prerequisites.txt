@@ -1,0 +1,70 @@
+**FIReUX - Prerequisites**
+
+## Overview
+Before setting up and running FIReUX, ensure you meet the following requirements. This will help you avoid common setup issues and ensure a smooth development experience.
+
+## System Requirements
+✅ **Node.js 18+** (Recommended: Latest LTS)
+✅ **NPM, Yarn, or PNPM** (Preferred: PNPM for speed)
+✅ **Git** for cloning repositories
+✅ **A Firebase Project** with Firestore enabled
+✅ **A Stripe Account** for payment integration
+✅ **Basic Knowledge of Nuxt 3 & Firebase**
+
+## Firebase Setup
+📌 **Create a Firebase Project:**
+   - Visit [Firebase Console](https://console.firebase.google.com/)
+   - Create a new project and set up Firestore.
+
+📌 **Enable Firestore Database:**
+   - Go to Firestore > Start a Firestore database
+   - Choose "Start in test mode" (for local development)
+
+📌 **Enable Firebase Authentication (If Needed):**
+   - Navigate to Authentication > Sign-in method
+   - Enable Email/Password or Anonymous sign-in if required
+
+📌 **Get Firebase Configuration:**
+   - Go to Project Settings > General > Firebase SDK snippet
+   - Copy the API Key, Auth Domain, and other values for later
+
+📌 **Download Firebase Service Account:**
+   - Navigate to Project Settings > Service accounts
+   - Click "Generate new private key"
+   - Save it in `/config/service-account.json`
+
+## Stripe Setup
+📌 **Create a Stripe Account:**
+   - Sign up at [Stripe](https://stripe.com/)
+   - Activate your account and get API keys
+
+📌 **Retrieve API Keys:**
+   - Go to Stripe Dashboard > Developers > API Keys
+   - Copy the **Publishable Key** and **Secret Key**
+
+📌 **Enable Webhooks (For Advanced Use Cases):**
+   - Navigate to Stripe Dashboard > Developers > Webhooks
+   - Add an endpoint to listen for Stripe events
+
+## Progressive Web App (PWA) Requirements
+📌 **App Icons:**
+   - A **192x192** and **512x512** square icon in `.png` format
+   - Ensure transparency for a clean look on mobile devices
+
+📌 **Manifest & Service Worker:**
+   - FIReUX includes default PWA settings, but you can customize them in `nuxt.config.ts`.
+   - Follow [browser guidelines](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Installable_PWAs) to test installation.
+
+## Additional Considerations
+✅ **Billing Account for Firebase (Optional, but Recommended):**
+   - Required to enable Firebase Storage & Firestore beyond free tier.
+   - Set up a **Blaze Plan** with a spending limit.
+
+✅ **Enable CORS for API Calls (If Hosting Elsewhere):**
+   - Set appropriate CORS rules in Firebase Hosting or your backend.
+
+✅ **Development & Deployment Readiness:**
+   - Have an IDE like **VS Code** installed.
+   - Familiarity with **Nuxt DevTools** for debugging.
+
+Once you've met these prerequisites, you're ready to install and configure FIReUX. 🚀
