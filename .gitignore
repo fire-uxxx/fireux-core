@@ -1,0 +1,61 @@
+# Node
+node_modules/
+.yarn/
+.yarnrc.yml
+yarn-error.log
+yarn-debug.log
+
+# Build
+.nuxt/
+.next/
+dist/
+build/
+coverage/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VSCode
+.vscode/
+
+# Mac
+.DS_Store
+
+# Env
+.env*
+
+# Firebase
+.firebase/
+.firebaserc
+
+# Local
+*.local
+
+# Output
+*.log
+
+# IDE
+.idea/
+
+# Misc
+*.swp
+*.swo
+
+# Test
+*.test.ts.snap
+
+# Generated
+*.tsbuildinfo
+
+# PWA
+workbox-*.js
+sw.js
+
+# Content
+content/.gitignore
+content/db.json
+
+# Copilot
+copilot/
