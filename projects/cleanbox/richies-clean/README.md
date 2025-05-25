@@ -4,56 +4,39 @@ Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduct
 
 ## Setup
 
-Make sure to install dependencies:
+### 1️⃣ Clone the repository
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+```sh
+git clone https://github.com/fire-uxxx/richies-clean.git
+cd richies-clean
 ```
 
-## Development Server
+### 2️⃣ Install dependencies
+
+```sh
+yarn install
+# or
+npm install
+```
+
+### 3️⃣ Development Server
 
 Start the development server on `http://localhost:3000`:
 
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
+```sh
 yarn dev
-
-# bun
-bun run dev
+# or
+npm run dev
 ```
 
-## Production
+### 4️⃣ Production
 
 Build the application for production:
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
+```sh
 yarn build
-
-# bun
-bun run build
+# or
+npm run build
 ```
 
 Locally preview production build:
