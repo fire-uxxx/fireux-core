@@ -1,58 +1,37 @@
-# Nuxt Minimal Starter
+# richies-clean
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Overview
+
+Richies Clean is a Nuxt 3 app powered by Cleanbox and FireUX.
+
+## Prerequisites
+
+See [../../README/Prerequisites.txt](../../README/Prerequisites.txt) for full system and service requirements.
 
 ## Setup
 
-### 1️⃣ Clone the repository
+1. Clone the repo:
+   ```sh
+   git clone https://github.com/fire-uxxx/richies-clean.git
+   cd richies-clean
+   ```
+2. Install dependencies:
+   ```sh
+   yarn install
+   # or
+   npm install
+   ```
+3. Configure environment:
+   - Create a `.env` file with your Firebase and Stripe keys (see Prerequisites).
+   - Place your Firebase service account in `/config/service-account.json` if needed.
+4. Run the app:
+   ```sh
+   yarn dev
+   # or
+   npm run dev
+   ```
 
-```sh
-git clone https://github.com/fire-uxxx/richies-clean.git
-cd richies-clean
-```
+## More Info
 
-### 2️⃣ Install dependencies
-
-```sh
-yarn install
-# or
-npm install
-```
-
-### 3️⃣ Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```sh
-yarn dev
-# or
-npm run dev
-```
-
-### 4️⃣ Production
-
-Build the application for production:
-
-```sh
-yarn build
-# or
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- [Copilot/AI prompts](copilot/README-app.md)
+- [Full prerequisites](../../README/Prerequisites.txt)
