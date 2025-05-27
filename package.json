@@ -1,0 +1,23 @@
+{
+  "name": "fireux",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FIReUX Monorepo",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "echo 'Use workspaces to run dev commands in apps.'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "packageManager": "yarn@4.9.1",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@nuxt/cli": "^3.25.1",
+    "nuxt": "^3.17.4",
+    "vite": "^6.3.5"
+  }
+}
