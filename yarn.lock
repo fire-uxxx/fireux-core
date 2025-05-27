@@ -6135,6 +6135,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fireux-app@workspace:projects/fireux/fireux-app":
+  version: 0.0.0-use.local
+  resolution: "fireux-app@workspace:projects/fireux/fireux-app"
+  dependencies:
+    nuxt: "npm:^3.17.4"
+    vue: "npm:^3.5.15"
+    vue-router: "npm:^4.5.1"
+  languageName: unknown
+  linkType: soft
+
 "fireux@workspace:.":
   version: 0.0.0-use.local
   resolution: "fireux@workspace:."
@@ -7872,6 +7882,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"misebox-app@workspace:projects/misebox/misebox-app":
+  version: 0.0.0-use.local
+  resolution: "misebox-app@workspace:projects/misebox/misebox-app"
+  dependencies:
+    nuxt: "npm:^3.17.4"
+    vue: "npm:^3.5.15"
+    vue-router: "npm:^4.5.1"
+  languageName: unknown
+  linkType: soft
+
 "mitt@npm:^3.0.1":
   version: 3.0.1
   resolution: "mitt@npm:3.0.1"
@@ -7986,6 +8006,14 @@ __metadata:
   checksum: 10c0/e914b63e24cd23f97e18376ec47e4ba3aa24365e4776212b666add2e47bb158003212980d732c49abf3719568900af7861873844a6e2d3a7ca7e86952c0e99e9
   languageName: node
   linkType: hard
+
+"my-module-playground@workspace:packages/fireux-core/playground":
+  version: 0.0.0-use.local
+  resolution: "my-module-playground@workspace:packages/fireux-core/playground"
+  dependencies:
+    nuxt: "npm:^3.17.4"
+  languageName: unknown
+  linkType: soft
 
 "nanoid@npm:^3.3.8":
   version: 3.3.11
@@ -11651,7 +11679,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:^3.4.5, vue@npm:^3.5.13, vue@npm:^3.5.14":
+"vue@npm:^3.4.5, vue@npm:^3.5.13, vue@npm:^3.5.14, vue@npm:^3.5.15":
   version: 3.5.15
   resolution: "vue@npm:3.5.15"
   dependencies:

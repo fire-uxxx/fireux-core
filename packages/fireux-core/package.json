@@ -9,7 +9,8 @@
     ".": {
       "types": "./dist/types.d.mts",
       "import": "./dist/module.mjs"
-    }
+    },
+    "./src/runtime/composables/*": "./src/runtime/composables/*"
   },
   "main": "./dist/module.mjs",
   "typesVersions": {

@@ -1,33 +1,26 @@
-// 🔧 GitHub Copilot Instructions:
-// This is a Nuxt 3 module called fireux-core inside a monorepo.
-// The module should register composables from ./runtime/composables (future).
-// It should also allow adding plugins, middleware, etc. from runtime/.
-// Keep the code minimal and idiomatic for Nuxt 3.
-// Playground app in ./playground is used to test the module.
-
-// This is a Nuxt 3 module using @nuxt/kit.
-// Auto-import composables from `runtime/composables`.
-// Use TypeScript with full type inference from @nuxt/schema and @nuxt/kit.
-// Assume this runs in a monorepo workspace called `@fireux/core`.
-// Stick to Nuxt conventions and keep it minimal.
-// Only export what is needed by Nuxt runtime or developer users.
-
 import { defineNuxtModule, createResolver, addImportsDir } from "@nuxt/kit";
 
-// Module options TypeScript interface definition
-export interface ModuleOptions {}
-
-export default defineNuxtModule<ModuleOptions>({
+export default defineNuxtModule({
   meta: {
-    name: "my-module",
-    configKey: "myModule",
+    name: "@fireux/core",
+    configKey: "fireux",
   },
-  // Default configuration options of the Nuxt module
-  defaults: {},
-  setup(_options, _nuxt) {
+  setup(_options, nuxt) {
     const resolver = createResolver(import.meta.url);
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addImportsDir(resolver.resolve("./runtime/composables"));
+    // ✅ Auto-import all composables (including nested folders)
+    const composablesPath = resolver.resolve("./runtime/composables");
+    const appPath = resolver.resolve("./runtime/composables/app");
+    const adminPath = resolver.resolve("./runtime/composables/admin");
+    const firebasePath = resolver.resolve("./runtime/composables/firebase");
+    const firestorePath = resolver.resolve("./runtime/composables/firestore");
+    const utilsPath = resolver.resolve("./runtime/composables/utils");
+
+    addImportsDir(composablesPath);
+    addImportsDir(appPath);
+    addImportsDir(adminPath);
+    addImportsDir(firebasePath);
+    addImportsDir(firestorePath);
+    addImportsDir(utilsPath);
   },
 });
