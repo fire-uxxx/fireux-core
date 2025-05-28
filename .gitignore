@@ -1,0 +1,5 @@
+# Exclude core and apps from monorepo
+packages/fireux-core/
+projects/fireux/fireux-app/
+projects/misebox/misebox-app/
+node_modules/
