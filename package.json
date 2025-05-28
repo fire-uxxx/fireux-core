@@ -4,6 +4,7 @@
   "private": true,
   "workspaces": [
     "packages/*",
+    "packages/*/playground",
     "projects/*/*"
   ],
   "repository": {
@@ -11,8 +12,9 @@
     "url": "https://github.com/fire-uxxx/monorepo"
   },
   "scripts": {
-    "dev": "yarn workspace misebox dev",
-    "build": "yarn workspace @fireux/core build",
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
     "workspace-status": "node scripts/git-report.mjs",
     "lint": "yarn workspaces foreach -ptv run lint",
     "typecheck": "yarn workspaces foreach -ptv run typecheck",
@@ -20,6 +22,11 @@
   },
   "packageManager": "yarn@4.9.1+sha512.f95ce356460e05be48d66401c1ae64ef84d163dd689964962c6888a9810865e39097a5e9de748876c2e0bf89b232d583c33982773e9903ae7a76257270986538",
   "dependencies": {
-    "nuxt": "^3.17.4"
+    "@nuxt/kit": "^3.17.4",
+    "nuxt": "^3.17.4",
+    "@nuxt/schema": "^3.17.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.23"
   }
 }

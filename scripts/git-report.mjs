@@ -1,5 +1,5 @@
 import { execSync } from "child_process";
-import { readFileSync, existsSync } from "fs";
+import { readFileSync, existsSync, readdirSync } from "fs";
 import path from "path";
 
 function getGitUrl(dir) {
@@ -54,12 +54,51 @@ function isGitRepo(dir) {
   }
 }
 
+function getChangedFiles(path) {
+  try {
+    const output = execSync(`git diff --name-only HEAD -- ${path}`, {
+      encoding: "utf-8",
+    });
+    return output.split("\n").filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
+function getLastCommit(path) {
+  try {
+    return execSync(`git log -1 --pretty=format:"%h %s" -- ${path}`, {
+      encoding: "utf-8",
+    }).trim();
+  } catch {
+    return "No recent commits";
+  }
+}
+
+function section(title) {
+  console.log(`\n${title}:\n${"=".repeat(title.length)}\n`);
+}
+
+function listChanges(label, baseDir) {
+  const dirs = existsSync(baseDir) ? readdirSync(baseDir) : [];
+  for (const dir of dirs) {
+    const fullPath = path.join(baseDir, dir);
+    const changes = getChangedFiles(fullPath);
+    if (changes.length) {
+      console.log(`📦 ${label}/${dir}`);
+      console.log(`  📝 Last commit: ${getLastCommit(fullPath)}`);
+      console.log(`  ✏️  Changed files:`);
+      changes.forEach((f) => console.log(`     - ${f}`));
+      console.log();
+    }
+  }
+}
+
 function reportMonorepo() {
   const dir = ".";
   const name = "monorepo";
   const gitUrl = getGitUrl(dir);
-  const changes = getGitChanges(dir);
-  return [{ Target: name, Repository: gitUrl, Changes: changes }];
+  return [{ Target: name, Repository: gitUrl }];
 }
 
 function reportPackages() {
@@ -79,8 +118,7 @@ function reportPackages() {
       if (!isGitRepo(dir)) continue;
       const name = path.basename(dir);
       const gitUrl = getGitUrl(dir);
-      const changes = getGitChanges(dir);
-      packages.push({ Target: name, Repository: gitUrl, Changes: changes });
+      packages.push({ Target: name, Repository: gitUrl });
     }
   }
 
@@ -104,8 +142,7 @@ function reportApps() {
       if (!isGitRepo(dir)) continue;
       const name = path.relative(projectsDir, dir);
       const gitUrl = getGitUrl(dir);
-      const changes = getGitChanges(dir);
-      apps.push({ Target: name, Repository: gitUrl, Changes: changes });
+      apps.push({ Target: name, Repository: gitUrl });
     }
   }
 
@@ -121,6 +158,22 @@ function main() {
 
   console.log("Apps:");
   console.table(reportApps());
+
+  section("Monorepo Root");
+  const rootChanges = getChangedFiles(".");
+  if (rootChanges.length) {
+    console.log(`📝 Last commit: ${getLastCommit(".")}`);
+    console.log(`✏️  Changed files:`);
+    rootChanges.forEach((f) => console.log(`   - ${f}`));
+  } else {
+    console.log(`✅ No changes in root.`);
+  }
+
+  section("Packages");
+  listChanges("packages", "packages");
+
+  section("Apps");
+  listChanges("apps", "apps");
 }
 
 main();
