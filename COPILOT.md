@@ -244,3 +244,43 @@ To ensure operations are executed in the correct repository context, use the `re
 
 - Ensure the workspace name matches the repository structure defined in `repo.mjs`.
 - This script prevents accidental pushes to the wrong repository by validating the workspace context.
+
+## 🔧 Managing the FireUX Monorepo
+
+### Repository Structure
+
+The FireUX monorepo is organized using Yarn 4 Workspaces. It includes:
+
+- **Packages**: Shared libraries and modules.
+- **Projects**: Applications built using the shared packages.
+
+### Key Commands
+
+Use the following commands to manage the monorepo effectively:
+
+```bash
+yarn workspaces info          # View workspace details
+yarn dev <workspace>          # Start development server for a workspace
+yarn build <workspace>        # Build a workspace for production
+yarn lint <workspace>         # Run linting for a workspace
+yarn test <workspace>         # Run tests for a workspace
+```
+
+### Repository Validation
+
+To prevent accidental pushes to the wrong repository:
+
+1. **Check Repository Context**: Ensure you are in the correct repository before committing or pushing changes.
+2. **Use Git Hooks**: Implement pre-commit and pre-push hooks to validate repository context.
+
+### Updating Dependencies
+
+To update dependencies across all workspaces:
+
+```bash
+yarn upgrade-interactive --latest
+```
+
+### Documentation
+
+Keep the `README.md` and `COPILOT.md` files updated with instructions for contributors and maintainers.
