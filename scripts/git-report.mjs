@@ -3,9 +3,9 @@ import { readFileSync, existsSync } from "fs";
 import path from "path";
 
 function getGitUrl(dir) {
-  const pkgPath = path.join(dir, 'package.json');
+  const pkgPath = path.join(dir, "package.json");
   try {
-    const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
+    const pkg = JSON.parse(readFileSync(pkgPath, "utf-8"));
     if (pkg.repository && pkg.repository.url) {
       return pkg.repository.url;
     }
@@ -36,14 +36,18 @@ function getGitChanges(dir) {
 
 function isGitRepo(dir) {
   try {
-    const isSubmodule = execSync(`git -C ${dir} rev-parse --show-superproject-working-tree`, {
-      encoding: "utf-8",
-    }).trim();
+    const isSubmodule = execSync(
+      `git -C ${dir} rev-parse --show-superproject-working-tree`,
+      {
+        encoding: "utf-8",
+      }
+    ).trim();
     if (isSubmodule) {
       return false; // Ignore submodules
     }
     execSync(`git -C ${dir} rev-parse --is-inside-work-tree`, {
-      stdio: "ignore" });
+      stdio: "ignore",
+    });
     return true;
   } catch {
     return false;
@@ -67,7 +71,9 @@ function reportPackages() {
       encoding: "utf-8",
     })
       .split("\n")
-      .filter((dir) => dir.trim() !== "" && existsSync(path.join(dir, "package.json")));
+      .filter(
+        (dir) => dir.trim() !== "" && existsSync(path.join(dir, "package.json"))
+      );
 
     for (const dir of subdirs) {
       if (!isGitRepo(dir)) continue;
@@ -90,7 +96,9 @@ function reportApps() {
       encoding: "utf-8",
     })
       .split("\n")
-      .filter((dir) => dir.trim() !== "" && existsSync(path.join(dir, "package.json")));
+      .filter(
+        (dir) => dir.trim() !== "" && existsSync(path.join(dir, "package.json"))
+      );
 
     for (const dir of subdirs) {
       if (!isGitRepo(dir)) continue;

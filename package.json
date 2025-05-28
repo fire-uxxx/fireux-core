@@ -6,19 +6,20 @@
     "packages/*",
     "projects/*/*"
   ],
-  "scripts": {
-    "dev": "yarn workspace misebox dev",
-    "build": "yarn workspace @fireux/core build",
-    "workspace-status": "node scripts/git-report.mjs"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/fire-uxxx/monorepo"
   },
-  "dependencies": {
-    "firebase": "^9.0.0",
-    "nuxt": "^3.0.0",
-    "stripe": "^8.0.0"
+  "scripts": {
+    "dev": "yarn workspace misebox dev",
+    "build": "yarn workspace @fireux/core build",
+    "workspace-status": "node scripts/git-report.mjs",
+    "lint": "yarn workspaces foreach -ptv run lint",
+    "typecheck": "yarn workspaces foreach -ptv run typecheck",
+    "clean": "rm -rf node_modules .yarn .pnp.* && find . -name node_modules -prune -exec rm -rf {} + && find . -name yarn.lock -delete"
   },
-  "packageManager": "yarn@4.9.1+sha512.f95ce356460e05be48d66401c1ae64ef84d163dd689964962c6888a9810865e39097a5e9de748876c2e0bf89b232d583c33982773e9903ae7a76257270986538"
+  "packageManager": "yarn@4.9.1+sha512.f95ce356460e05be48d66401c1ae64ef84d163dd689964962c6888a9810865e39097a5e9de748876c2e0bf89b232d583c33982773e9903ae7a76257270986538",
+  "dependencies": {
+    "nuxt": "^3.17.4"
+  }
 }

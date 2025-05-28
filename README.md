@@ -1,92 +1,60 @@
-Here’s a clean and informative starter README.md for your monorepo:
-
 # FireUX Monorepo
 
-This is the root of the **FireUX** monorepo. It will host multiple Nuxt-based applications and shared modules.
+This is the root of the **FireUX** monorepo, which manages shared code and multiple Nuxt-based applications.
 
-## Structure
+## 📁 Structure
 
 fireux/
-├── packages/ # Shared Nuxt modules (e.g., fireux-core)
-├── projects/ # Individual applications or tenants (e.g., misebox, fireux)
-├── tsconfig.base.json
-├── package.json
-├── yarn.lock
-└── .gitignore
+├── packages/ # Shared modules (e.g. fireux-core)
+├── projects/ # Applications by domain or tenant (e.g. misebox, fireux)
+├── scripts/ # Utility scripts (e.g. git-report.mjs)
+├── package.json # Yarn 4 workspaces root
+├── tsconfig.json # Shared TypeScript config
+└── .gitignore # Ignores packages/ and projects/ by default
 
-## Goals
+## 🧩 Workspace Layout
 
-- Modular architecture
-- Multi-tenant Nuxt 3 apps
-- Shared core module (`fireux-core`)
-- Support for Firebase, Stripe, Vuefire, PWA, and more
+- **packages/** → Nuxt modules shared across apps (e.g., `fireux-core`)
+- **projects/** → Independent Nuxt 3 applications (multi-tenant pattern)
+  - `projects/misebox/misebox-app`
+  - `projects/fireux/fireux-app`
 
-## Setup
-
-1. Install dependencies:
-
-   ```bash
-   yarn install
-   ```
-
-2. To run an app (once created):
-
-   ```bash
-   yarn workspace <app-name> dev
-   ```
-
-3. To build a module:
-   ```bash
-   yarn workspace @fireux/core build
-   ```
-
-## 🚀 Workspace Utilities
-
-### Start a Dev Server
+## ⚙️ Setup
 
 ```bash
-yarn dev misebox
-```
+yarn install  # Installs all dependencies
 
-### Build a Package
+▶️ Running Apps
 
-```bash
-yarn build @fireux/core
-```
+yarn workspace misebox-app dev
+yarn workspace fireux-app dev
 
-### Show Git Status Across Workspaces
+🛠️ Building Modules
 
-```bash
-yarn workspace-status
-```
+yarn workspace @fireux/core build
 
-All commands work with intelligent path resolution and clean console output.
+🔍 Git Status Report
 
-## 🧠 Copilot: Git Status Reporting
+Use the custom script to report git status per workspace:
 
-Use `scripts/git-report.mjs` to generate a clear report of Git changes across all parts of the monorepo.
-
-```bash
 node scripts/git-report.mjs
-```
 
-It prints 3 sections:
-- **Monorepo**
-- **Packages**
-- **Apps**
+It outputs three sections:
+	•	Monorepo — Root-level changes
+	•	Packages — Shared modules
+	•	Apps — Each discovered Nuxt app in projects/*/*
 
-Each includes the target name, GitHub URL (from `package.json.repository.url`), and number of changes.
+URLs are read from each package.json.repository.url.
 
-This script auto-discovers apps in `projects/*/*`, and packages in `packages/*`.
-
-Let me know if you'd like to:
-- Add sorting or filters
-- Export this as JSON/CSV for automation
-- Make a `yarn git:report` alias
-- Add CI checks for dirty workspaces.
+🧠 Notes
+	•	This monorepo uses Yarn 4 Workspaces.
+	•	Git ignores packages/ and projects/ unless explicitly included.
+	•	To scaffold a new app or module, add it to projects/ or packages/ and update package.json > workspaces.
 
 ⸻
 
-Monorepo managed with Yarn 4 Workspaces.
-
-Let me know when you'd like to scaffold the `packages/fireux-core` module or define `projects/` structure.
+Let me know if you’d like to:
+	•	Add CI checks for dirty workspaces
+	•	Auto-deploy on push
+	•	Generate a visual dependency graph
+```
