@@ -1,0 +1,6 @@
+<script>start("/Users/danielwatson/Developer/Misebox/misebox/web/misebox-pro/assets/icons/google-logo/");</script>
+<script>onHasParentDirectory();</script>
+<script>addRow("sign-in-dark.svg","sign-in-dark.svg",0,18420,"18.0 kB",1738010935,"27/01/2025, 21:48:55");</script>
+<script>addRow("sign-in-light.svg","sign-in-light.svg",0,18418,"18.0 kB",1738010935,"27/01/2025, 21:48:55");</script>
+<script>addRow("sign-up-dark.svg","sign-up-dark.svg",0,19587,"19.1 kB",1738010935,"27/01/2025, 21:48:55");</script>
+<script>addRow("sign-up-light.svg","sign-up-light.svg",0,19585,"19.1 kB",1738010935,"27/01/2025, 21:48:55");</script>

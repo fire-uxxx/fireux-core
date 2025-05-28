@@ -1,17 +1,44 @@
 # Exclude core and apps from monorepo
 packages/
 projects/
+
+# Node
 node_modules/
+.yarn/
+.yarnrc.yml
+yarn-error.log
+yarn-debug.log
+
+# Build
+.nuxt/
+.next/
+dist/
+build/
+coverage/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VSCode
+.vscode/
+.idea/
+
+# Mac
 .DS_Store
+
+# Env
+.env
+.env.*
+*.local
+
+# Firebase
+.firebase/
+.firebaserc
+
+# Temporary files
 *.log
 *.tmp
 *.swp
 *.swo
-coverage/
-dist/
-build/
-.env
-.env.*
-.idea/
-.vscode/
-*.local

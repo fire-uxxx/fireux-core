@@ -1,0 +1,66 @@
+🔥 FIReUX - Core Functionality Checklist
+
+This is the minimum your FIReUX - Firebase & Stripe Starter Template must do before release.
+
+1️⃣ Core Features (Must Work)
+
+✅ Post Creation – Users can create new posts and save them in Firestore.
+✅ Post Viewing – Users can browse a paginated list of posts from Firestore.
+✅ Post Timestamping – Posts must display a readable “Created At” date.
+✅ Stripe Payment Integration – Users can tip creators via Stripe Checkout.
+✅ Tip Amount Selection – Users can select how much they want to tip.
+✅ Success & Cancel Pages – Users must be redirected correctly after payment.
+✅ Responsive Navigation – Works on both desktop and mobile screens.
+✅ Mobile Menu Handling – Menu works smoothly & closes when an option is clicked.
+✅ PWA Enabled – The app should be installable as a Progressive Web App.
+✅ Dark Mode Support – Ensure UI supports light & dark themes.
+✅ SEO Metadata – Page titles & descriptions dynamically update.
+
+2️⃣ Firebase Integration
+
+✅ Firestore Database – Posts are saved in Firestore & retrieved correctly.
+✅ Firestore Security Rules – Users can only read & tip, not modify others’ posts.
+✅ Firestore Indexing – Queries are optimized for fast performance.
+✅ Environment Variables – Firebase keys stored securely in .env.
+✅ Cloud Functions (if used) – Any server-side logic should be deployed.
+
+3️⃣ Stripe Integration
+
+✅ Stripe Keys in .env – Ensure all API keys are correctly stored.
+✅ Test Payment Flow – Process test payments using Stripe test cards.
+✅ Payment Webhook (if applicable) – Ensure payments are logged & verified.
+✅ Successful Checkout Redirect – Users see a confirmation after tipping.
+✅ Failed Payment Handling – Users get a proper error message if checkout fails.
+
+4️⃣ UI & Navigation
+
+✅ Navigation Links Work – Mobile & desktop navigation function correctly.
+✅ Active Link Highlighting – Users know which page they are currently on.
+✅ Dividers in Mobile Menu – Dividers display correctly based on active state.
+✅ Fast Loading UI – Components are lazy-loaded where possible.
+
+5️⃣ Performance & Optimization
+
+✅ PWA Enabled – Users should be able to install the app on mobile/desktop.
+✅ Lighthouse Score 90+ – Optimize performance & accessibility.
+✅ Preloading Important Assets – Fonts, icons, & images load efficiently.
+✅ Minimize Dependencies – Remove unused packages & optimize bundle size.
+✅ Optimize Firestore Queries – Paginate and limit queries to avoid over-fetching.
+✅ Lazy Load Images & Components – Improve initial load time.
+✅ SEO & Meta Tags – Ensure pages have proper titles & descriptions.
+
+6️⃣ Developer & Deployment Readiness
+
+✅ README Complete – Includes setup, configuration, troubleshooting.
+✅ Prettier & Linter Pass – Code formatting is clean and consistent.
+✅ No Exposed Secrets – .env & service-account.json excluded from Git.
+✅ Production Build Works – npm run build && npm run preview runs without errors.
+✅ Tested on Fresh Install – Ensure new developers can clone & run easily.
+✅ Download Link Ready – Hosted privately (not on public GitHub).
+✅ Pricing/Access Finalized – If selling, ensure payment method is working.
+
+🚀 Ready to Release?
+
+Once everything above is checked off, you’re ready to launch FIReUX! 🎉
+
+Would you like me to expand on any sections?

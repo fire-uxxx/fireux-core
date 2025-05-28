@@ -1,0 +1,6 @@
+{
+  "manageCopilotGuidlines": true,
+  "htmlVoidSelfClosing": "never",
+  "noRefValueInTemplates": true,
+  "avoidTailwindInlineUtilities": true
+}
