@@ -98,7 +98,8 @@ function reportMonorepo() {
   const dir = ".";
   const name = "monorepo";
   const gitUrl = getGitUrl(dir);
-  return [{ Target: name, Repository: gitUrl }];
+  const changes = getGitChanges(dir);
+  return [{ Target: name, Repository: gitUrl, Changes: changes }];
 }
 
 function reportPackages() {
@@ -118,7 +119,13 @@ function reportPackages() {
       if (!isGitRepo(dir)) continue;
       const name = path.basename(dir);
       const gitUrl = getGitUrl(dir);
-      packages.push({ Target: name, Repository: gitUrl });
+
+      // Exclude changes in the monorepo root
+      const changes = getChangedFiles(dir).filter(
+        (file) => !file.startsWith("../")
+      ).length;
+
+      packages.push({ Target: name, Repository: gitUrl, Changes: changes });
     }
   }
 
@@ -142,7 +149,8 @@ function reportApps() {
       if (!isGitRepo(dir)) continue;
       const name = path.relative(projectsDir, dir);
       const gitUrl = getGitUrl(dir);
-      apps.push({ Target: name, Repository: gitUrl });
+      const changes = getGitChanges(dir);
+      apps.push({ Target: name, Repository: gitUrl, Changes: changes });
     }
   }
 
