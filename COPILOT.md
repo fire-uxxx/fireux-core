@@ -20,7 +20,7 @@ This file guides GitHub Copilot and ChatGPT when generating or updating code wit
 - Encourage **module reuse** from `packages/fireux-core`
 - Keep **apps isolated** unless sharing logic via packages
 - Use **`package.json.repository.url`** to determine Git URLs
-- Use `node scripts/git-report.mjs` to detect local changes per workspace
+- Use `yarn workspaces foreach` to detect local changes per workspace
 - Ensure the monorepo is functional with a "Hello World" system across apps and packages
 
 ## 🤖 Suggested Behaviors

@@ -920,7 +920,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fireux/core@workspace:^, @fireux/core@workspace:packages/fireux-core":
+"@fireux/core@workspace:packages/fireux-core":
   version: 0.0.0-use.local
   resolution: "@fireux/core@workspace:packages/fireux-core"
   dependencies:
@@ -938,6 +938,10 @@ __metadata:
     typescript: "npm:~5.8.3"
     vitest: "npm:^3.1.4"
     vue-tsc: "npm:^2.2.10"
+  peerDependencies:
+    "@nuxt/cli": ^3.0.0
+    vite: ^4.0.0
+    vue: ^3.0.0
   languageName: unknown
   linkType: soft
 
@@ -6150,22 +6154,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fireux-app@workspace:projects/fireux/fireux-app":
-  version: 0.0.0-use.local
-  resolution: "fireux-app@workspace:projects/fireux/fireux-app"
-  dependencies:
-    "@fireux/core": "workspace:^"
-    nuxt: "npm:^3.17.4"
-    vue: "npm:^3.5.15"
-    vue-router: "npm:^4.5.1"
-  languageName: unknown
-  linkType: soft
-
 "fireux-monorepo@workspace:.":
   version: 0.0.0-use.local
   resolution: "fireux-monorepo@workspace:."
   dependencies:
-    "@nuxt/kit": "npm:^3.17.4"
     "@nuxt/schema": "npm:^3.17.4"
     "@types/node": "npm:^22.15.23"
     nuxt: "npm:^3.17.4"
@@ -8361,6 +8353,16 @@ __metadata:
   checksum: 10c0/5fee7ff309727763689cfad844d979aedd2204a817fbaaf0e1603794a7c20db28548d7b024692f953557df6ce4a0ee4ae46cd8ebd9b36cfb300b9226b567c479
   languageName: node
   linkType: hard
+
+"nuxt-app@workspace:projects/fireux/fireux-app":
+  version: 0.0.0-use.local
+  resolution: "nuxt-app@workspace:projects/fireux/fireux-app"
+  dependencies:
+    nuxt: "npm:^3.17.4"
+    vue: "npm:^3.5.15"
+    vue-router: "npm:^4.5.1"
+  languageName: unknown
+  linkType: soft
 
 "nuxt@npm:^3.17.4":
   version: 3.17.4
