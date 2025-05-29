@@ -36,6 +36,19 @@ Copilot or ChatGPT should:
   - package-level `repository.url` for source tracking
 - 🏗 Scaffold shared modules using Nuxt's official module template
 
+## 🛠️ Repository URL Setup
+
+When creating a new package or project, ensure the `package.json` includes the correct `repository.url` field. This should point to the Git repository for the package or project. For example:
+
+```json
+"repository": {
+  "type": "git",
+  "url": "https://github.com/fire-uxxx/<repo-name>.git"
+}
+```
+
+Replace `<repo-name>` with the appropriate repository name.
+
 ## 🚫 Avoid
 
 - Don’t scaffold entire apps in the monorepo root

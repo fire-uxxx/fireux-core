@@ -284,3 +284,32 @@ yarn upgrade-interactive --latest
 ### Documentation
 
 Keep the `README.md` and `COPILOT.md` files updated with instructions for contributors and maintainers.
+
+### Adding New Packages
+
+When adding new packages to the monorepo, follow these steps to ensure consistency and ease of future work:
+
+1. **Package Setup**:
+
+   - Use a consistent naming convention for the package (e.g., `@fireux/<package-name>`).
+   - Add a `package.json` file with the correct `name`, `version`, and `repository` fields.
+
+2. **Build and Test**:
+
+   - Include a `prepack` or `build` script in the `package.json` to ensure the package can be built.
+   - Add unit tests and ensure they pass before linking the package.
+
+3. **Linking**:
+
+   - Use `yarn workspace <app-name> add <package-name>` to link the package to the appropriate app.
+
+4. **Documentation**:
+
+   - Update `README.md` and `COPILOT.md` with the package details and usage instructions.
+   - Include examples of how to use the package in other projects.
+
+5. **Validation**:
+   - Verify that the package works as expected by running the linked app.
+   - Check for any peer dependency warnings and resolve them if necessary.
+
+By following these steps, you can ensure that new packages are seamlessly integrated into the monorepo.

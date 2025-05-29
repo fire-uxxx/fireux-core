@@ -21,7 +21,7 @@ fireux/
 
 ## ⚙️ Setup
 
-```bash
+````bash
 yarn install  # Installs all dependencies
 
 ▶️ Running Apps
@@ -51,10 +51,22 @@ URLs are read from each package.json.repository.url.
 	•	Git ignores packages/ and projects/ unless explicitly included.
 	•	To scaffold a new app or module, add it to projects/ or packages/ and update package.json > workspaces.
 
+## 🛠️ Repository URL Setup
+
+When creating a new package or project, ensure the `package.json` includes the correct `repository.url` field. This should point to the Git repository for the package or project. For example:
+
+```json
+"repository": {
+  "type": "git",
+  "url": "https://github.com/fire-uxxx/<repo-name>.git"
+}
+````
+
+Replace `<repo-name>` with the appropriate repository name.
+
 ⸻
 
 Let me know if you’d like to:
-	•	Add CI checks for dirty workspaces
-	•	Auto-deploy on push
-	•	Generate a visual dependency graph
-```
+• Add CI checks for dirty workspaces
+• Auto-deploy on push
+• Generate a visual dependency graph

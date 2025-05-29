@@ -920,7 +920,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fireux/core@workspace:packages/fireux-core":
+"@fireux/core@workspace:^, @fireux/core@workspace:packages/fireux-core":
   version: 0.0.0-use.local
   resolution: "@fireux/core@workspace:packages/fireux-core"
   dependencies:
@@ -6150,11 +6150,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fireux-app@workspace:projects/fireux/fireux-app":
+  version: 0.0.0-use.local
+  resolution: "fireux-app@workspace:projects/fireux/fireux-app"
+  dependencies:
+    "@fireux/core": "workspace:^"
+    nuxt: "npm:^3.17.4"
+    vue: "npm:^3.5.15"
+    vue-router: "npm:^4.5.1"
+  languageName: unknown
+  linkType: soft
+
 "fireux-monorepo@workspace:.":
   version: 0.0.0-use.local
   resolution: "fireux-monorepo@workspace:."
   dependencies:
     "@nuxt/kit": "npm:^3.17.4"
+    "@nuxt/schema": "npm:^3.17.4"
     "@types/node": "npm:^22.15.23"
     nuxt: "npm:^3.17.4"
   languageName: unknown
@@ -11676,7 +11688,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:^3.4.5, vue@npm:^3.5.13, vue@npm:^3.5.14":
+"vue@npm:^3.4.5, vue@npm:^3.5.13, vue@npm:^3.5.14, vue@npm:^3.5.15":
   version: 3.5.15
   resolution: "vue@npm:3.5.15"
   dependencies:
